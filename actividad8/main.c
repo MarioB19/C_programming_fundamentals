@@ -9,7 +9,8 @@ Eduardo Roberto Quinio Perez
 
 
 int km, m, cm;
-int proceso (int);
+
+void  proceso (int);
 
 
 void salida(int , char [20]);
@@ -31,7 +32,7 @@ int main()
     return 0;
 }
 
-int proceso (int input)
+void proceso (int input)
 {
 
     km = input / 100000;
@@ -46,4 +47,3 @@ int proceso (int input)
 void salida(int total, char denominacion [20]){
     printf("\n %d  %s ", total, denominacion);
 }
-
