@@ -8,8 +8,6 @@ Eduardo Roberto Quinio Perez
 #include <stdio.h>
 
 
-int km, m, cm;
-
 void  proceso (int);
 
 
@@ -25,9 +23,6 @@ int main()
 
     proceso(input);
 
-    salida(km, "kilometro(s)");
-    salida(m, "metro(s)");
-    salida(cm, "centimetro(s)");
 
     return 0;
 }
@@ -35,11 +30,18 @@ int main()
 void proceso (int input)
 {
 
+    int km, m, cm;
+
     km = input / 100000;
 
     m = (input % 100000) /100;
 
     cm = (input % 100000) % 100;
+
+    salida(km, "kilometro(s)");
+    salida(m, "metro(s)");
+    salida(cm, "centimetro(s)");
+
 
 }
 
