@@ -6,7 +6,7 @@
 #include <time.h>
 
 #define MAX_JUGADORES 50 // Maximo de jugadores defenido en 50 por default
-#define NUM_DESAFIOS 30
+#define NUM_DESAFIOS 30 //10 faciles, 10 intermedios, 10 dificiles
 
 char desafios[NUM_DESAFIOS][256] = {
 	// Sencillos
@@ -84,7 +84,7 @@ void imprimir_ascii_error();
 void mostrar_menu();
 void despedida();
 void limpiar_pantalla(); //se abstrae la logica de limpiar pantalla en una funcion
-void imprimir_ranking(int indice_jugador_ranking); //se impre el ranking, resaltando la posicion del jugador que se busva
+void imprimir_ranking(int indice_jugador_ranking); //se imprime el ranking, resaltando la posicion del jugador que se busca
 
 
 //Funcion para registrar jugador
@@ -103,9 +103,9 @@ void generar_ranking(); // Se genera/actualiza el ranking
 
 void jugar(); //Esta es la funcion inicial del juego
 void iniciar_partida(char nombre[100]); //Esta funcion permite que inicie la partida
-void actualizar_puntuacion(char nombre[100], int puntuacion);// Actualiza
-int obtener_puntaje(int numero_intentos, int acertijos_correctos, int puntaje); //
-int generar_acertijo(int tipo); //Genera n acertijo de forma aleatoria dependiendo del tipo, tipo = 0 (facil), tipo 1 (intermedio), tipo 2 (dificil)
+void actualizar_puntuacion(char nombre[100], int puntuacion);// Actualiza la puntuacion de un jugador, siempre y cuando se maneor a la actual
+int obtener_puntaje(int numero_intentos, int acertijos_correctos, int puntaje); //se obtiene el puntaje con el multiplicador
+int generar_acertijo(int tipo); //Genera un acertijo de forma aleatoria dependiendo del tipo, tipo = 0 (facil), tipo 1 (intermedio), tipo 2 (dificil)
 //Devuelve 1 si la respuesta fue correcta, 0 si la respuesta fue incorrecta
 
 
@@ -663,7 +663,7 @@ void imprimir_ranking(int indice_jugador_ranking)
 {
 	printf("\n RANKING \n");
 
-	for (int i = 0; i < indice_jugador; i++) // se recorren todos los jugadores
+	for (int i = 0; i < indice_jugador; i++)
 	{
 		if (indice_jugador_ranking != -1 && indice_jugador_ranking == i) //se imprime el nombre del jugador en el ranking siempre y cuando se haya ingresado un nombre valido
 		{
